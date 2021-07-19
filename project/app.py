@@ -6,8 +6,7 @@ import cv2
 
 main = Blueprint('main', __name__)
 
-if os.environ.get('WERKZEUG_RUN_MAIN') or Flask.debug is False:
-    camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(0)
 
 
 def gen_frames():

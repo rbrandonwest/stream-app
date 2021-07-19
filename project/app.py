@@ -15,7 +15,7 @@ def index():
 
 @main.route('/stream')
 @login_required
-def profile():
+def stream():
     return render_template('stream.html', name=current_user.name)
 
 

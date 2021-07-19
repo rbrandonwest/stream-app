@@ -1,1 +1,1 @@
-web: gunicorn project:app --preload --workers 1
+web: gunicorn "project:create_app()" --preload --workers 1

@@ -5,6 +5,20 @@ import cv2
 
 main = Blueprint('main', __name__)
 
+camera = cv2.VideoCapture(0)
+
+
+def gen_frames():
+    while True:
+        success, frame = camera.read()  # read the camera frame
+        if not success:
+            break
+        else:
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            # concat frame one by one and show result
+            yield (b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
 
 @main.route('/')
 def index():

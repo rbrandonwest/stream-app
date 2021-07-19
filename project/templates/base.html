@@ -22,7 +22,7 @@
                                 Home
                             </a>
                             {% if current_user.is_authenticated %}
-                            <a href="{{ url_for('main.stream') }}" class="navbar-item">
+                            <a href="{{ url_for('main.video_feed') }}" class="navbar-item">
                                 Stream
                             </a>
                             {% endif %}

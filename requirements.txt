@@ -14,3 +14,4 @@ authlib
 six
 flask-sqlalchemy
 flask-login
+cv2

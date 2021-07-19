@@ -1,10 +1,16 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
+from flask_login import login_required, current_user
+from . import db
 
-app = Flask(__name__)
+main = Blueprint('main', __name__)
 
-@app.route("/")
+
+@main.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+
+@main.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', name=current_user.name)

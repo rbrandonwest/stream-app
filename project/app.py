@@ -10,11 +10,6 @@ if os.environ.get('WERKZEUG_RUN_MAIN') or Flask.debug is False:
     camera = cv2.VideoCapture(0)
 
 
-@main.route('/')
-def index():
-    return render_template('index.html')
-
-
 def gen_frames():
     print(camera)
     while True:
@@ -26,6 +21,11 @@ def gen_frames():
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+
+
+@main.route('/')
+def index():
+    return render_template('index.html')
 
 
 @main.route('/stream')

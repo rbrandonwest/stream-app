@@ -14,4 +14,4 @@ authlib
 six
 flask-sqlalchemy
 flask-login
-cv2
+opencv-python

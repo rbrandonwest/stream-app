@@ -8,7 +8,7 @@ main = Blueprint('main', __name__)
 camera = cv2.VideoCapture(0)
 
 
-def gen_frames():
+def gen_frames(camera):
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:

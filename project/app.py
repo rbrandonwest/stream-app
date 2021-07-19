@@ -1,9 +1,12 @@
 from flask import Blueprint, render_template, Response
 from flask_login import login_required, current_user
+from importlib import import_module
 from . import db
 import cv2
 
 main = Blueprint('main', __name__)
+
+Camera = import_module('camera_opencv').Camera
 
 camera = cv2.VideoCapture(0)
 

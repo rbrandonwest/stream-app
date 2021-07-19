@@ -14,4 +14,4 @@ authlib
 six
 flask-sqlalchemy
 flask-login
-opencv-python-headless
+opencv-python-headless==4.2.0.32

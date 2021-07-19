@@ -5,7 +5,7 @@ import cv2
 
 main = Blueprint('main', __name__)
 
-camera = cv2.VideoCapture('.static.testImg.png')
+camera = cv2.VideoCapture(0)
 
 
 @main.route('/')

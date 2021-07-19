@@ -3,6 +3,9 @@
 {% block content %}
 <h1 class="title">
   Welcome, {{ name }}!
-  <img src="{{ url_for('main.video_feed') }}" width="100%">
+  <!-- <img src="{{ url_for('main.video_feed') }}" width="100%"> -->
+  <video controls="" autoplay="" name="media">
+    <source src="../static/static_video.mp4" type="video/mp4">
+  </video>
 </h1>
 {% endblock %}

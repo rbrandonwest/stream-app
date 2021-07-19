@@ -10,7 +10,7 @@ def index():
     return render_template('index.html')
 
 
-@main.route('/profile')
+@main.route('/stream')
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    return render_template('stream.html', name=current_user.name)

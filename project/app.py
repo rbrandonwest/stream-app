@@ -14,7 +14,7 @@ def index():
 
 
 def gen_frames():
-    while camera.isOpened():
+    while True:
         success, frame = camera.read()  # read the camera frame
         if not success:
             break

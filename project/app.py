@@ -6,7 +6,7 @@ import cv2
 
 main = Blueprint('main', __name__)
 
-camera = cv2.VideoCapture(-1, 2)
+camera = cv2.VideoCapture('static/testImg.png')
 
 
 def gen_frames():
@@ -16,10 +16,10 @@ def gen_frames():
         if not success:
             break
         else:
-            ret, buffer = cv2.imencode('.jpg', frame)
+            ret, buffer = cv2.imencode('.png', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+                   b'Content-Type: image/png\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
 
 
 @main.route('/')

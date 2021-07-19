@@ -5,8 +5,6 @@ import cv2
 
 main = Blueprint('main', __name__)
 
-camera = cv2.VideoCapture(1)
-
 
 @main.route('/')
 def index():
@@ -25,6 +23,7 @@ def video_feed():
 
 
 def gen_frames():
+    camera = cv2.VideoCapture(0)
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:

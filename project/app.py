@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, Response
 from flask_login import login_required, current_user
-from .static import testImg.png
 from . import db
 import cv2
 

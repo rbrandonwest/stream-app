@@ -23,7 +23,7 @@ def video_feed():
 
 
 def gen_frames():
-    camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(-1)
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:

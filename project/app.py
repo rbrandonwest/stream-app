@@ -1,11 +1,12 @@
 from flask import Blueprint, render_template, Response
 from flask_login import login_required, current_user
+from .static import testImg.png
 from . import db
 import cv2
 
 main = Blueprint('main', __name__)
 
-camera = cv2.VideoCapture(-1, 2)
+camera = cv2.VideoCapture()
 
 
 @main.route('/')
@@ -14,6 +15,7 @@ def index():
 
 
 def gen_frames():
+    print(camera)
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:

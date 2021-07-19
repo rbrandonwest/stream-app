@@ -6,7 +6,7 @@ import cv2
 
 main = Blueprint('main', __name__)
 
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(-1, 2)
 
 
 def gen_frames():

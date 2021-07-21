@@ -1,0 +1,6 @@
+<ASX version = "3.0>
+    <TITLE>MyStream</TITLE>
+    <ENTRY>
+        <REF HREF="172.16.134.150/30:1234" />
+    </ENTRY>
+</ASX>

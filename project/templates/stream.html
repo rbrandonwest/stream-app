@@ -3,14 +3,19 @@
 {% block content %}
 <h1 class="title">
   Welcome, {{ name }}!
-  <!-- <img src="{{ url_for('main.video_feed') }}" width="100%"> -->
-  <!-- <video controls="" autoplay="" name="media">
+  <h2>Static Video</h2>
+  <div>
+  <video controls="" autoplay="" name="media">
     <source src="../static/static_video.mp4" type="video/mp4">
-  </video> -->
+  </video>
+  </div>
     <!-- <video style="height: 500px; width: 800px">
       <source id="stream" src="http://c044ec303934.ngrok.io/stream.ogg" type="video/ogg; codecs=theora" autoplay="autoplay" />
     </video>  -->
+    <h2>Live Stream</h2>
+    <div>
     <video id="stream" src="http://0577473a8046.ngrok.io/stream.ogg" type="video/ogg; codecs=theora" controls="controls" />
+  </div>
     <!-- <embed src="../../localstream.asx height=”370” width=”400"> -->
 </h1>
 {% endblock %}
